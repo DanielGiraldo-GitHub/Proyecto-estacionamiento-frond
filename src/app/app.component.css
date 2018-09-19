@@ -42,3 +42,9 @@
     }
     .row.content {height:auto;} 
   }
+ 
+ p{
+   margin: 5%;
+   text-align: left;
+   font-size: auto;
+ }

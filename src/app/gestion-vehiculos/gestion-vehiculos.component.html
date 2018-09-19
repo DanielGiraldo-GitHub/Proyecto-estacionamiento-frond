@@ -1,7 +1,7 @@
 
 <div class="clear"></div>
-<h1 style="text-align: center" >ingreso y salida de vehiculos</h1>
-<form class="form-horizontal main-form" style="padding: 40px">
+<h1 style="text-align: center;" >ingreso y salida de vehiculos</h1>
+<form class="form-horizontal main-form">
   <label for="placa"><samp class="required">*</samp>Placa</label>
     <div class="form-group">    
       <div style="float: left; width: 70%;" > <S></S>
@@ -9,8 +9,8 @@
        <input name="placa" type="text"  class="form-control" id="placa" [(ngModel)]="vehiculo.placa" aria-describedby="placaHelp" placeholder="ingrese la placa del vehiculo">  
        <span ng-show="main-form.placa.$error.required">Todos los campos non obligatorios</span>
       </div>
-      <div style="float: right; width: 210px;" > 
-       <button type="button" class="btn btn-primary" name="buscar" (click)='buscarVehiculo()'>Buscar</button>
+      <div style="float: right; width: 240px;" > 
+       <button type="button" id ="buscar" class="btn btn-primary" name="buscar" (click)='buscarVehiculo()'>Buscar</button>
       </div>
     </div>
     <label for="tipoVehiculo"><samp   class="required">*</samp>Tipo de vehiculo</label>
@@ -26,10 +26,10 @@
         <input name="cilindraje" g-required="requeridoCilindraje" type="text" class="form-control" [(ngModel)]="vehiculo.cilindraje"  id="cilindraje" aria-describedby="placaHelp" placeholder="ingrese el cilindraje del vehiculo">
     </div>
     <div>
-        <button style="float: left; width: 30%;" type="button" class="btn btn-primary" name="ingresar" (click)='ingresarVehiculo()'>Ingresar</button>
+        <button style="float: left; width: 28%;" type="button" class="btn btn-primary" name="ingresar" (click)='ingresarVehiculo()'>Ingresar</button>
     </div>
     <div >
-        <button style="float: left; width: 30%;" type="button" class="btn btn-primary" name="Salir" (click)='salidaVehiculo()'>Salir</button>
+        <button style="float: initial; width: 28%;" type="button" class="btn btn-primary" name="Salir" (click)='salidaVehiculo()'>Salir</button>
     </div>
     <br>   <br>   <br>
      </form>

@@ -48,10 +48,6 @@ ngOnInit() {
       console.log(error)
       swal ( "",error.error, " error ")
     });
-    
-    this.vehiculo.placa = "";
-    this.vehiculo.tipoVehiculo = "";
-    this.vehiculo.cilindraje = null;
     this.getDisponibilidad();
   }
 
