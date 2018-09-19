@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { VehiculoModel } from '../model/vehiculo.model';
-
+import { Observable } from 'rxjs';
+import { HttpHeaders } from '@angular/common/http';
+import { DisponibilidadModel } from './../model/disponibilidad.model';
+import { ParqueaderoModule } from './../model/parqueadero.model';
 
 
 @Injectable({
@@ -9,25 +12,32 @@ import { VehiculoModel } from '../model/vehiculo.model';
 })
 export class ParqueaderoService {
 
-  constructor(private http: HttpClient) { }
+ constructor(private http: HttpClient) { }
 
-  private carrosParqueados: Array<VehiculoModel>;
-  private motosParqueadas:  Array<VehiculoModel>;
+ private httpHeaders = new  HttpHeaders({'Content-Type':'application/json'});
 
-  public getCarrosParquedos():Array<VehiculoModel>{
-    this.http.get("http://localhost:8080/listarCarrosParqueados").subscribe(res => {
-     this.carrosParqueados = res as VehiculoModel[];
-     console.log(this.carrosParqueados);
-     
-    });
-    return this.carrosParqueados;
+  public getCarrosParquedos():Observable<VehiculoModel[]>{
+    return this.http.get<VehiculoModel[]>("http://localhost:8080/listarCarrosParqueados");
   }
 
-  public getMotosParquedas():Array<VehiculoModel>{
-    this.http.get("http://localhost:8080/listarMotosParqueadas").subscribe(res => {
-     this.motosParqueadas = res as VehiculoModel[];
-     console.log(this.motosParqueadas);
-  });
-return this.motosParqueadas;
+  
+  public getMotosParquedas():Observable<VehiculoModel[]>{
+    return this.http.get<VehiculoModel[]>("http://localhost:8080/listarMotosParqueadas");
   }
+
+  public getDisponibilidad():Observable<DisponibilidadModel>{
+    return this.http.get<DisponibilidadModel>("http://localhost:8080/consultarDisponibilidad");
+  }
+
+  public ingresarVehiculo(vehiculo:VehiculoModel):Observable<string>{
+     return this.http.post<string>("http://localhost:8080/ingresarVehiculo",vehiculo,{headers:this.httpHeaders});
+  }
+
+  public salidaVehiculo(vehiculo:VehiculoModel):Observable<ParqueaderoModule>{
+    return this.http.post<ParqueaderoModule>("http://localhost:8080/salidaVehiculo",vehiculo,{headers:this.httpHeaders});
+ }
+
+ public buscarVehiculo(placa:string):Observable<VehiculoModel>{
+  return this.http.get<VehiculoModel>(`http://localhost:8080/buscarVehiculo/${placa}`);
+}
 }

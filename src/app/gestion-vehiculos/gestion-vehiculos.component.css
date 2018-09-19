@@ -1,0 +1,12 @@
+.required{
+    color: red;
+    font-weight: bolder;
+}
+.main-form{
+    margin: 0 auto;
+    align-items: center;
+    width: 80%;
+}
+.form-control{
+    width: 70%;
+}

@@ -1,9 +1,9 @@
 export class ParqueaderoModule{
 
-    private  id: number;
-    private  fehcaIngreso: Date;
-    private  fechaSalida: Date;
-    private  precio : number;
-    private  idVehiculo: number;
-    private  estado: boolean;
+    public  id: number;
+    public  fehcaIngreso: Date;
+    public  fechaSalida: Date;
+    public  precio : number;
+    public  idVehiculo: number;
+    public  estado: boolean;
 }
