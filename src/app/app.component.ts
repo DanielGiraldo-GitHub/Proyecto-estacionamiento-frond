@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 import { ParqueaderoService } from './parqueadero/parqueadero.service';
 import { DisponibilidadModel } from './model/disponibilidad.model';
+import { GestionVehiculosComponent } from './gestion-vehiculos/gestion-vehiculos.component';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +10,20 @@ import { DisponibilidadModel } from './model/disponibilidad.model';
 })
 
 export class AppComponent {
-  constructor( private parqueaderoService: ParqueaderoService) { }
 
-  public disponibilidad: DisponibilidadModel;
+  constructor( private parqueaderoService: ParqueaderoService) { }
+  
+  gestionVehiculosComponent : GestionVehiculosComponent;
+  @Input() disponibilidad: DisponibilidadModel;
 
   ngOnInit() {
     this.getDisponibilidad();
   }
+
+  ngOnChanges() {
+    this.getDisponibilidad();
+  }
+  
 
   title = 'Ceiba-Estacionamiento';
 

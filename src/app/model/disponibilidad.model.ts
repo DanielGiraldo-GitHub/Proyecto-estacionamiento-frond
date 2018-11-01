@@ -1,5 +1,5 @@
 export class DisponibilidadModel{
 
-    private  carros: number;
-    private  motos: number;
+    public  carros: number;
+    public  motos: number;
 }

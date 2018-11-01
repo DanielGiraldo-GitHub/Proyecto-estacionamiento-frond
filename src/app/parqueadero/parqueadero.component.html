@@ -1,11 +1,14 @@
+
 <h1 align="center" >Carros parqueados</h1>
-        <div ali="padding-top: 25px" style="padding: 35px" >
-            <table class="table">
+        <div ali="padding-top: 15px" style="padding: 15px" >
+          
+            <table class="table table-striped ">
                 <thead>
                   <tr>
                     <th scope="col">Placa</th>
                     <th scope="col">Cilindraje</th>
                     <th scope="col">Tipo de vehiculo</th>
+                    <th scope="col" >Confirmar salida</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -13,19 +16,26 @@
                     <td>{{carro.placa}}</td>
                     <td>{{carro.cilindraje}}</td>
                     <td>Carro</td>
+                    <td>  
+                      <button mat-mini-fab color="yellow"  (click)="eliminarVehiculo(carro.placa)">              
+                        <i class="material-icons">check_circle</i>  
+                      </button>      
+                    </td>
                   </tr>
                 </tbody>
               </table>
+        
         </div>
-
         <h1 align="center" >Motos parqueados</h1>
-        <div ali="padding-top: 25px" style="padding: 35px;"  >
-            <table class="table">
+        <div ali="padding-top: 15px" style="padding: 15px;"  >
+     
+            <table class="table table-striped ">
                 <thead>
                   <tr>
                     <th scope="col">Placa</th>
                     <th scope="col">Cilindraje</th>
                     <th scope="col">Tipo de vehiculo</th>
+                    <th scope="col" >Confirmar salida</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -33,6 +43,10 @@
                     <td>{{moto.placa}}</td>
                     <td>{{moto.cilindraje}}</td>
                     <td>Moto</td>
+                    <td >  
+                      <button mat-mini-fab color="yellow"  (click)="eliminarVehiculo(moto.placa)">              
+                        <i class="material-icons"> check_circle </i>  
+                      </button>   
                   </tr>
                 </tbody>
               </table>

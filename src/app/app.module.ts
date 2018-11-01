@@ -7,21 +7,32 @@ import { ParqueaderoModule } from './app-routing.module';
 import { FormsModule }    from '@angular/forms';
 import { ParqueaderoComponent } from './parqueadero/parqueadero.component';
 import { GestionVehiculosComponent } from './gestion-vehiculos/gestion-vehiculos.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+//Material
+import {MaterialModule} from './material';
+import { ChartsModule } from 'ng2-charts';
+import { GraficaComponent } from './grafica/grafica.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ParqueaderoComponent,
-    GestionVehiculosComponent
+    GestionVehiculosComponent,
+    GraficaComponent
   ],
   imports: [
-  BrowserModule,
-  ParqueaderoModule,
-  RouterModule,
-  HttpClientModule,
-  FormsModule
+    ParqueaderoModule,
+    RouterModule,
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    MatButtonModule,
+    ChartsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+   providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
